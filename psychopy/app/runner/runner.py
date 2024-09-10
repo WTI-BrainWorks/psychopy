@@ -610,8 +610,8 @@ class RunnerPanel(wx.Panel, ScriptProcess, handlers.ThemeMixin):
 
         self.ribbon.buttons['pystop'].Disable()
         if self.currentSelection:
-            self.ribbon.buttons['pyrun'].Enable()
-            self.ribbon.buttons['pypilot'].Enable()
+            self.ribbon.buttons['pyrun'].Disable()
+            self.ribbon.buttons['pypilot'].Disable()
 
     def onRunShortcut(self, evt=None):
         """
@@ -890,8 +890,8 @@ class RunnerPanel(wx.Panel, ScriptProcess, handlers.ThemeMixin):
         self.ribbon.buttons['remove'].Enable()
         # enable run/pilot ctrls
         self.ribbon.buttons['pyswitch'].Enable()
-        self.ribbon.buttons['pyrun'].Enable()
-        self.ribbon.buttons['pypilot'].Enable()
+        self.ribbon.buttons['pyrun'].Disable()
+        self.ribbon.buttons['pypilot'].Disable()
         # enable JS run
         if self.currentFile.suffix == '.psyexp':
             self.ribbon.buttons['jsrun'].Enable()
