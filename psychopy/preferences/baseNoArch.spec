@@ -50,7 +50,7 @@
 # Application settings, applied to coder, builder, & prefs windows
 [app]
     # display tips when starting PsychoPy
-    showStartupTips = boolean(default='True')
+    showStartupTips = boolean(default='False')
     # what windows to display when PsychoPy starts
     defaultView = option('last', 'builder', 'coder', 'runner', 'all', default='last')
     # reset preferences to defaults on next restart of PsychoPy
