@@ -33,7 +33,7 @@ def sendStayAwake():
 
     Added: v1.79.00.
 
-    Currently supported on: windows, macOS
+    Currently supported on: windows, macOS, X11
     """
     return False
 

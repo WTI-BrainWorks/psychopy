@@ -7,7 +7,10 @@
 
 """Placeholder for adding c (or ctypes) extensions to PsychoPy on linux.
 """
-from psychopy import logging
+from time import time
+from psychopy import core, logging
+from pyglet.libs.x11.xlib import XResetScreenSaver
+
 import sys
 try:
     import ctypes
@@ -75,3 +78,15 @@ def rush(value=True, realtime=False):
         logging.warning(warnMax)
 
     return not err
+
+def sendStayAwake():
+    t = time()
+    if t - sendStayAwake.time < 10:
+        return
+
+    sendStayAwake.time = t
+    for winWeakRef in core.openWindows:
+        win = winWeakRef()
+        XResetScreenSaver(win.xDisplay)
+
+sendStayAwake.time = time()
